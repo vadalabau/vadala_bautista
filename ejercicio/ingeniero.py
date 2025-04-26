@@ -1,14 +1,13 @@
 from persona import Persona
-from expeciones import SistemaDuplicadoError
 
 class Ingeniero(Persona):
     def __init__(self, nombre, dni, nacionalidad):
         super().__init__(nombre, dni, nacionalidad)
-        self.__sistemas = []
+        self.__sistemas = []  # Lista de tuplas (sistema, estado)
 
     def agregar_sistema(self, sistema, estado):
         if (sistema, estado) in self.__sistemas:
-            raise SistemaDuplicadoError("Este sistema ya fue registrado")
+            raise ValueError("Este sistema ya fue registrado")
         self.__sistemas.append((sistema, estado))
 
     def informe_personal(self):

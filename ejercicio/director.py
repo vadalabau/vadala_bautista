@@ -17,6 +17,6 @@ class Director(Persona):
         reporte = "REPORTE GLOBAL DE MISIONES:\n\n"
         for a in self.__astronautas:
             reporte += a.informe_personal() + "\n"
-        with open("informe_misiones.txt", "w") as archivo:
+        with open("informe_misiones.txt", "w") as archivo: #preguntarle a sesto xd
             archivo.write(reporte)
         return reporte
